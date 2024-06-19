@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex布局</title>
+    <style>
+      body {
+        margin: 0%;
+        height: 100vh;
+        background-color: #eee;
+      }
+      .flex {
+        display: flex;
+      }
+      .baise {
+        background-color: white;
+      }
+      * {
+        border: 1px solid black;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .daohangtiao {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(190 190 190);
+        font-size: 14px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!--侧边栏-->
+    <div
+      style="width: 200px; z-index: 1; border: 1px dotted #999"
+      class="baise flex column"
+    >
+      <!--头像栏-->
+      <div
+        style="
+          height: 80px;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 5px;
+        "
+        class="flex"
+      >
+        <img
+          src="https://kangwenchang.com/logo.png"
+          width="50px"
+          height="50px"
+          alt="康文昌"
+        />
+        <div style="margin-left: 10px">康文昌</div>
+      </div>
+      <!--导航栏-->
+      <div class="flex1 flex column">
+        <!--导航条-->
+        <div class="daohangtiao">导航</div>
+        <div class="daohangtiao">导航</div>
+        <div class="daohangtiao">导航</div>
+        <div class="daohangtiao">导航</div>
+      </div>
+    </div>
+    <!--主区域-->
+    <div class="flex1 column flex mg8">
+      <!--头部栏-->
+      <div style="height: 50px; z-index: 1" class="baise"></div>
+      <!--内容区-->
+      <div class="flex1 flex" style="overflow: auto">
+        <!--左区-->
+        <div style="flex: 3" class="flex column">
+          <!--数据区-->
+          <div class="flex baise">
+            <div style="height: 100px" class="flex1 mgr8"></div>
+            <div style="height: 100px" class="flex1 mgr8"></div>
+            <div style="height: 100px" class="flex1 mgr8"></div>
+            <div style="height: 100px" class="flex1"></div>
+          </div>
+          <!--列表区-->
+          <div class="flex column baise mgt8">
+            <!--列表项-->
+            <div style="height: 150px"></div>
+            <div style="height: 150px" class="mgt8"></div>
+            <div style="height: 150px" class="mgt8"></div>
+            <div style="height: 160px" class="mgt8"></div>
+          </div>
+        </div>
+        <!--右区-->
+        <div class="flex1 flex column mg8" style="flex: 1">
+          <!--提示区-->
+          <div style="height: 150px" class="baise"></div>
+          <!--消息区-->
+          <div style="height: 300px" class="baise"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
